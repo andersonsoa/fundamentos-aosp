@@ -21,5 +21,7 @@
 - f) Código-fonte da máquina virtual ART.
 ![image](https://user-images.githubusercontent.com/19675356/223894776-e02fcb4d-d37f-4a68-9854-975907a8534c.png)
 
-- g) Código-fonte da API de localização (Location Manager).
+> g) Código-fonte da API de localização (Location Manager).
+
+
 - h) Código-fonte da aplicação padrão de calendário (Calendar).
