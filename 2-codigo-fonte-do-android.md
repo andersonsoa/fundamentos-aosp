@@ -4,7 +4,7 @@
 ### 2.1. Estudando o código-fonte do Android
 
 > a) Toolchain (Clang) pré-compilado para Linux.
-![image](https://user-images.githubusercontent.com/19675356/223890048-fe525c83-f823-405a-b80c-31619bc535b0.png)
+![image](https://user-images.githubusercontent.com/19675356/224193347-3e206731-4f52-428e-82be-03e0db9dce52.png)
 
 > b) Código-fonte da biblioteca C do Android.
 ![image](https://user-images.githubusercontent.com/19675356/223890653-c75efaf4-1799-40b3-8794-5e635e809484.png)
@@ -16,7 +16,7 @@
 ![image](https://user-images.githubusercontent.com/19675356/223893910-ce586e03-a858-4410-aa1f-ad88c85bcb10.png)
 
 > e) Arquivos de configuração do produto emulator_x86_64.
-![image](https://user-images.githubusercontent.com/19675356/223894173-13fb49b0-03e1-4a3a-a84b-499d39a90ba2.png)
+![image](https://user-images.githubusercontent.com/19675356/224198026-82a0f238-74c8-421e-be55-db1a8dae3a9f.png)
 
 > f) Código-fonte da máquina virtual ART.
 ![image](https://user-images.githubusercontent.com/19675356/223894776-e02fcb4d-d37f-4a68-9854-975907a8534c.png)
