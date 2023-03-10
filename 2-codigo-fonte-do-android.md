@@ -84,3 +84,17 @@ ls out/target/product/emulator_x86_64
 emulator -help
 ```
 ![image](https://user-images.githubusercontent.com/19675356/224189017-615b159c-cc84-4ee4-a7f5-51bb48660aa8.png)
+
+### Resumo
+> 2.1
+O principal metodo para encontrar os arquivos na pasta aosp foi entrar na pasta que poderia conter o arquivo e rodar o comando
+`find | grep -i <ARQUIVO>` e apos localizar, rodei um `cat` no arquivo e tirei e salvei a imagem do resultado.
+
+> 2.2
+Este foi mais simples pois o CodeSearch entrega tudo mastigado.
+
+> 2.3
+Inicialmente precisamos entrar na pasta onde baixamos o AOSP de preferencia utilizando o usuario administrador, logo após efetuei um `ls` para certificar-me de estar no local correto.
+Após isso, carregamos o envsetup, ele adiciona uma seria de comandos utilitário no bash, como `lunch` e `hmm`, hmm lista todos os comandos que podemos utilizar dentro da pasta do aosp, o lunch serve tanto para listar quanto selecionar os produtos disponiveis no aosp.
+Em seguida listamos todas as variáveis de ambiente e filtramos pelas variáveis que o lunch e envsetup inserem no sistema.
+É falado tambem sobre o comando `m` que serve para compilar o aosp, gerando assim uma nova imagem que pode ser emulada com o comando `emulator`, a imagem gerada fica localizada em `out/target/product/<NOME_DA_IMAGEM>`, podemos ver outros comandos uteis do emulator rodando um `emulator -help`.
