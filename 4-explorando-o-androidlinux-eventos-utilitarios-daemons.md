@@ -103,14 +103,32 @@ cal
 
 ### 4.3. Daemons do Android
 ```bash
-
+ps -ef | grep -v grep | grep -e adbd -e "init sec" -e installd -e lmkd -e "logd" -e tombstoned -e ueventd -e vold
 ```
 ![image](https://user-images.githubusercontent.com/19675356/225184203-1ea1b079-088b-4b3c-abef-c05802b25080.png)
 
 ```bash
-
+ls -al /system/bin/ueventd
 ```
 ![image](https://user-images.githubusercontent.com/19675356/225184310-4af1f652-8376-4bc3-8be6-d4edbc8d8c28.png)
 
 - tres linhas que verificam o argv
 ![image](https://user-images.githubusercontent.com/19675356/225184482-6845a61a-9ab4-4e94-8e7d-00800f646893.png)
+
+### Sumário
+
+> Primeiramente aprendemos sobre como escutar e disparar eventos no android utilizando o adb e sua toolkit  
+> usamos principalmente o getenvt para escutar eventos, pois ele nos da informações muito uteis para que possamos
+> disparar eventos manualemtne, verificamos o getevent -l que exibe os eventos de forma mais amigavel, com texto indicando que tipo de evento ocorreu.  
+> Sendevent é o comando utilizado para envitar eventos do adb shell, para isso precisamos saber qual device queremos simular, qual tipo de evento queremos disparar,  
+> o código referente e tambem o valor.
+
+> Posteriormente aprendi sobre as variaveis de ambiente so android, como listalas e setalas  
+> para listar as variaveis basta utilizar um getprop e se quisermos detalhar uma variavel ambiente especifica  
+> basta informala Ex: getprop <NOME_DA_VARIAVEL>.
+> Já para definir novas variaveis utilizamos o comando setprop (lembrando que para isso precisamos estar com o SU ativo no terminal),
+> más variaveis definidas não persistem entre reboots do emulador, para que isso ocorra precisamos criar ela com o prefixo persist,
+> lembrando que exitem variaveis somente de leitura que não podem ser sobreescritas.
+> vimos tambem que utilizando os comandos screencap e screenrecord podemos tirar screenshots e gravar videos no emulador.
+
+> Na parte final aprendemos sobre os principais serviços rondando no android, que basicamente o mantem funcionando.
