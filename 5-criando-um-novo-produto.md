@@ -18,6 +18,7 @@ ls
 
 <br />
 <br />
+
 ### 5.2. Analisando o Produto do Emulador
 
 ```bash
@@ -45,6 +46,7 @@ gedit build/target/board/emulator_x86_64/BoardConfig.mk
 
 <br />
 <br />
+
 ### 5.3. Criando e Compilando um Novo Produto
 
 ```bash
@@ -79,19 +81,107 @@ lunch palomakoba_onion-eng
 ![image](https://user-images.githubusercontent.com/19675356/225479094-2990e33b-2660-4784-bdd9-89961863d187.png)
 
 ```bash
-
+m -j8
 ```
+![image](https://user-images.githubusercontent.com/19675356/225773414-c90cae84-29c1-4412-bb83-f0fee1587027.png)
+
+<br />
+<br />
+
+### 5.4. Executando o Novo Produto Criado
 
 ```bash
-
+emulator &
 ```
+![image](https://user-images.githubusercontent.com/19675356/225774304-7fae8a6b-4d76-4ab1-bc1f-44ee9a4e0416.png)
+
+<br />
+<br />
+
+### 5.5. Investigando as Configurações do Emulador
 
 ```bash
-
+gedit build/target/product/sdk_phone_x86_64.mk
 ```
 
+> Relatório de arquivos do "palomakoba_onion.mk"
 ```bash
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+    # FIM
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_system.mk)
+    $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system.mk)
+        $(call inherit-product, $(SRC_TARGET_DIR)/product/media_system.mk)
+            $(call inherit-product, $(SRC_TARGET_DIR)/product/base_system.mk)
+                $(call inherit-product, $(SRC_TARGET_DIR)/product/runtime_libart.mk)
+                    $(call inherit-product, $(SRC_TARGET_DIR)/product/default_art_config.mk)
+                        # FIM 
+            $(call inherit-product, $(SRC_TARGET_DIR)/product/cfi-common.mk)
+                #FIM
+            $(call inherit-product-if-exists, vendor/google/products/cfi-vendor.mk) # NÂO EXISTE
+        $(call inherit-product-if-exists, frameworks/base/data/fonts/fonts.mk) # carrega fontes (tipografia)
+            # FIM
+        $(call inherit-product-if-exists, external/google-fonts/dancing-script/fonts.mk)
+            # FIM
+        $(call inherit-product-if-exists, external/google-fonts/carrois-gothic-sc/fonts.mk)
+            # FIM
+        $(call inherit-product-if-exists, external/google-fonts/coming-soon/fonts.mk)
+            # FIM
+        $(call inherit-product-if-exists, external/google-fonts/cutive-mono/fonts.mk)
+            # FIM
+        $(call inherit-product-if-exists, external/google-fonts/source-sans-pro/fonts.mk)
+            # FIM
+        $(call inherit-product-if-exists, external/noto-fonts/fonts.mk)
+            # FIM
+        $(call inherit-product-if-exists, external/roboto-fonts/fonts.mk)
+            # FIM
+        $(call inherit-product-if-exists, external/hyphenation-patterns/patterns.mk)
+            # FIM
+        $(call inherit-product-if-exists, frameworks/base/data/keyboards/keyboards.mk)
+            # FIM
+        $(call inherit-product-if-exists, frameworks/webview/chromium/chromium.mk) # NÃO EXISTE
+    $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system.mk)
+        # FIM
+    $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_default.mk)
+        # FIM
+    $(call inherit-product-if-exists, vendor/google/security/adb/vendor_key.mk) # NÃO EXISTE
+    $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+        # FIM
+$(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system_ext.mk)
+    $(call inherit-product, $(SRC_TARGET_DIR)/product/media_system_ext.mk)
+        $(call inherit-product, $(SRC_TARGET_DIR)/product/base_system_ext.mk)
+            # FIM
+$(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
+    # FIM
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_product.mk)
+    $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_product.mk)
+        $(call inherit-product, $(SRC_TARGET_DIR)/product/media_product.mk)
+            $(call inherit-product, $(SRC_TARGET_DIR)/product/base_product.mk)
+                # FIM
+    $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_product.mk)
+        # FIM
+    $(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
+        # FIM
+$(call inherit-product-if-exists, device/generic/goldfish/x86_64-vendor.mk)
+    # FIM
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulator_vendor.mk)
+    $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
+        $(call inherit-product, $(SRC_TARGET_DIR)/product/media_vendor.mk)
+            $(call inherit-product, $(SRC_TARGET_DIR)/product/base_vendor.mk)
+                # FIM
+    $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_vendor.mk)
+        # FIM
+    $(call inherit-product-if-exists, device/generic/goldfish/vendor.mk)
+        $(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
+            # FIM
+        $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+            # FIM
+$(call inherit-product, $(SRC_TARGET_DIR)/board/emulator_x86_64/device.mk)
+    # FIM
+$(call inherit-product-if-exists, sdk/build/product_sdk.mk)
+    # FIM
+$(call inherit-product-if-exists, development/build/product_sdk.mk)
+    # FIM
 ```
 
 ```bash
