@@ -183,15 +183,77 @@ $(call inherit-product-if-exists, sdk/build/product_sdk.mk)
 $(call inherit-product-if-exists, development/build/product_sdk.mk)
     # FIM
 ```
+  
+  
+```bash
+# gedit build/target/product/handheld_system.mk
+
+PRODUCT_PACKAGES += \
+    BasicDreams \
+    BlockedNumberProvider \
+    Bluetooth \
+    BluetoothMidiService \
+    BookmarkProvider \
+    BuiltInPrintService \
+    CalendarProvider \
+    cameraserver \
+    CameraExtensionsProxy \
+    CaptivePortalLogin \
+    CertInstaller \
+    clatd \
+    DocumentsUI \
+    DownloadProviderUi \
+    EasterEgg \
+    ExternalStorageProvider \
+    FusedLocation \
+    InputDevices \
+    KeyChain \
+    librs_jni \
+    ManagedProvisioning \
+    MmsService \
+    MtpService \
+    MusicFX \
+    NfcNci \
+    PacProcessor \
+    PrintRecommendationService \
+    PrintSpooler \
+    ProxyHandler \
+    screenrecord \
+    SecureElement \
+    SharedStorageBackup \
+    SimAppDialog \
+    Telecom \
+    TelephonyProvider \
+    TeleService \
+    Traceur \
+    UserDictionaryProvider \
+    VpnDialogs \
+    vr \
+```
 
 ```bash
+# gedit frameworks/base/data/sounds/AllAudio.mk
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/Alarm_Beep_01.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Alarm_Beep_01.ogg \
+    $(LOCAL_PATH)/Alarm_Beep_02.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Alarm_Beep_02.ogg \
+    $(LOCAL_PATH)/Alarm_Beep_03.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Alarm_Beep_03.ogg \
+    $(LOCAL_PATH)/Alarm_Buzzer.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Alarm_Buzzer.ogg \
+    $(LOCAL_PATH)/Alarm_Classic.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Alarm_Classic.ogg \
+    $(LOCAL_PATH)/Alarm_Rooster_02.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Alarm_Rooster_02.ogg \
+    $(LOCAL_PATH)/alarms/ogg/Argon.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Argon.ogg \
+    $(LOCAL_PATH)/alarms/ogg/Barium.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Barium.ogg \
+    $(LOCAL_PATH)/alarms/ogg/Carbon.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Carbon.ogg \
+    $(LOCAL_PATH)/alarms/ogg/Cesium.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/Cesium.ogg \
+    ...
 
 ```
 
 ```bash
+# gedit build/make/target/product/aosp_product.mk
 
-```
-
-```bash
-
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.config.ringtone?=Ring_Synth_04.ogg \
+    ro.config.notification_sound?=pixiedust.ogg \
+    ro.com.android.dataroaming?=true \
 ```
