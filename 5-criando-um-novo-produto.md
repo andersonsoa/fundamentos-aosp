@@ -250,6 +250,11 @@ PRODUCT_COPY_FILES += \
 ```
 
 ```bash
+mplayer frameworks/base/data/sounds/Alarm_Rooster_02.ogg
+```
+![image](https://user-images.githubusercontent.com/19675356/225784237-3f40a124-d8fc-42b5-8abd-30b0d8c48570.png)
+
+```bash
 # gedit build/make/target/product/aosp_product.mk
 
 PRODUCT_PRODUCT_PROPERTIES += \
