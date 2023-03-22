@@ -53,39 +53,79 @@ cat palomakoba.txt
 ### 7.2. Modificando o Init
 
 ```bash
+# Feche o seu emulador e saia do adb shell. Você deve estar de volta no diretório do 
+# seu produto (device/palomakoba/zeus/). Crie um arquivo chamado zeus.rc:
 
+gedit onion.rc
+```
+![image](https://user-images.githubusercontent.com/19675356/227061522-86943c71-4703-4b23-b7f8-f2f0a33ea771.png)
+
+```bash
+# O que o arquivo de inicialização acima irá fazer?
+
+# R: assim que o sistema começar a iniciar ele setara uma variavel ambiente PALOMAKOBA com o valor "Palomakoba Onion! v1.0"
+# 
 ```
 
 ```bash
+# Modifique o arquivo palomakoba_zeus.mk para incluir a linha abaixo depois do código em destaque. 
+# Note que tem um \ adicional no final do código em destaque.
 
+gedit palomakoba_onion.mk
 ```
+![image](https://user-images.githubusercontent.com/19675356/227062152-ea42f8d1-02ff-469d-8ce5-8e6c17ea5b44.png)
 
 ```bash
+# Compile o novo Android e execute o emulator (caso já tenha um aberto, fecho-o antes). 
+# Espere uns segundo para o emulador iniciar e execute o adb shell:
 
+m
+emulator &
+sleep 20
+adb shell
 ```
+![image](https://user-images.githubusercontent.com/19675356/227063269-385ad3a7-3416-4030-b6b8-d5f0252dae2b.png)
+![image](https://user-images.githubusercontent.com/19675356/227063380-20035d79-ee01-410f-8ac8-457f6300ebaa.png)
 
 ```bash
+# No adb shel, verifique se o arquivo foi realmente criado:
 
+cd /vendor/etc/init
+ls -al onion.rc
 ```
+![image](https://user-images.githubusercontent.com/19675356/227063487-e88a80c3-ab60-4fd2-8712-c2f502e80aec.png)
 
 ```bash
+# Agora vamos ver se o arquivo foi realmente lido e executado pelo Init. Começando pela variável de ambiente:
 
+echo $PALOMAKOBA
 ```
+![image](https://user-images.githubusercontent.com/19675356/227063612-17589592-2818-4b28-94d6-a278324ff701.png)
 
 ```bash
+# Por fim, vamos verificar se a mensagem foi escrita no logcat:
 
+logcat -d | grep "D Palomakoba"
 ```
+![image](https://user-images.githubusercontent.com/19675356/227063858-d75477f1-10ab-4c43-bd44-2694ed0041c9.png)
+  
+  
+### 7.3. Modificando Propriedades do Sistema
 
 ```bash
+# Inclua as linhas abaixo no final do arquivo palomakoba_zeus.mk
 
+gedit palomakoba_onion.mk
 ```
+![image](https://user-images.githubusercontent.com/19675356/227064097-e74d9156-7413-484a-8c6d-d5ec98ebdfd7.png)
 
 ```bash
+# Compile, exexute o emulador e inicie o ADB:
 
-```
-
-```bash
-
+m
+emulator &
+sleep 20
+adb shell
 ```
 
 ```bash
