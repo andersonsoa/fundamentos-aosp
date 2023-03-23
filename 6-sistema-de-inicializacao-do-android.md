@@ -157,4 +157,7 @@ tail -8 /system/etc/init/bootstat.rc
 
 ### Sumario
 
->
+> Neste módulo aprendemos sobre o ciclo de vida da inicialização do android, vimos e aprendemos sobre os principais
+> eventos disparados durante o boot, quando ele seta, executa ou delega execução para outros arquivos.
+> Vimos que exitem mais de 60 arquivos direfentes que são responsáveis por iniciar diversos serviços responsáveis
+> por varias partes do sistema.
