@@ -183,3 +183,7 @@ std::string persistent_property_filename = "/data/property/persistent_properties
 ```
 
 ### Sumário:
+
+> Neste módulo botamos em pratica coisas que aprendemos no módulo anterior referentes ao ciclo de vida da 
+> inicialização do android, personalizamos o sistema adicionando alguns arquivos
+> e setando variaveis de ambiente durante o processo de build.
