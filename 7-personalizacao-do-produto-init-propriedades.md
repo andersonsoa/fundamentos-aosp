@@ -127,19 +127,59 @@ emulator &
 sleep 20
 adb shell
 ```
+![image](https://user-images.githubusercontent.com/19675356/227065959-df188484-3b82-4d62-8ef8-4756704a15bc.png)
+![image](https://user-images.githubusercontent.com/19675356/227066129-620fbfbe-4dfd-45b4-bf2b-7b383430c6e0.png)
 
 ```bash
+# Dentro do ADB, vamos ver se as propriedades foram setadas:
 
+getprop | grep -e ro.palomakoba -e ro.vendor.palomakoba -e ro.product.palomakoba
+```
+![image](https://user-images.githubusercontent.com/19675356/227066263-20c4ca6c-e5c3-4891-bc08-10ad09b5e904.png)
+  
+  
+### 7.4. Investigando as Propriedades do Sistema
+
+```bash
+# As propriedades da partição /system criadas em tempo de compilação do Android são salvas no arquivo /system/build.prop:
+
+cat /system/build.prop | grep -e ro.palomakoba -e ro.vendor.palomakoba -e ro.product.palomakob
+```
+![image](https://user-images.githubusercontent.com/19675356/227066858-b8eade17-6a5a-497c-bb2f-daa8f84e01b2.png)
+![image](https://user-images.githubusercontent.com/19675356/227066927-c6240628-ab59-4e63-8f29-5ba5775b7a69.png)
+
+```bash
+# Já as da partição /vendor são criadas no arquivo /vendor/build/build.prop
+
+cat /vendor/build.prop | grep -e ro.palomakoba -e ro.vendor.palomakoba -e ro.product.palomakoba
+```
+![image](https://user-images.githubusercontent.com/19675356/227066970-0f8a1839-bd73-453b-9417-6f56e40119a8.png)
+
+```bash
+# Entretanto, as propriedades das partições /product, /system_ext e /odm são salvas em /<partição>/etc/build.prop
+
+cat /product/etc/build.prop | grep -e ro.palomakoba -e ro.vendor.palomakoba -e ro.product.palomakoba
+```
+![image](https://user-images.githubusercontent.com/19675356/227067049-dc80df80-993f-415d-9cef-bef5c8549486.png)
+
+```bash
+# Investigando a parte do código fonte que faz a leitura desses (e outros) arquivos de propriedades, 
+# lista abaixo os arquivos na mesma ordem que são lidos. Considere que estamos compilando a última 
+# versão do Android, de modo que a função load_properties_from_partition irá ler apenas o 
+# arquivo /<partição>/etc/build/build.prop e depois retornar.
+
+> "system_ext"
+> "odm"
+> "product"
 ```
 
 ```bash
+# Por fim, as propriedades persistentes, que permitem escrita e mantém o valor entre reboots, são salvas em outro 
+# local, uma vez que as partições mencionadas anteriormente são todas apenas para leitura (não permitem escrita). 
+# Estas propriedades são implementadas no arquivo persistent_properties.cpp. Olhando o seu código fonte, indique 
+# em qual arquivo do sistema essas propriedades são salvas.
 
+std::string persistent_property_filename = "/data/property/persistent_properties";
 ```
 
-```bash
-
-```
-
-```bash
-
-```
+### Sumário:
