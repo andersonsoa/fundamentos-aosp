@@ -102,27 +102,50 @@ emulator &
 <dimen name="config_dialogCornerRadius">50dp</dimen>
 ```
 ![image](https://user-images.githubusercontent.com/19675356/227394055-dde7fa2c-435d-4f6a-bf50-fdf3dd4fbc99.png)
+![image](https://user-images.githubusercontent.com/19675356/227396886-26848fd9-3579-41ac-b528-fa5681aebc04.png)
 
 ```bash
+# Tirar um screenshot do Android mostrando a caixa de diálogo de confirmação.
+```
+![image](https://user-images.githubusercontent.com/19675356/227397080-e99f2bc6-9711-426d-9b6d-120da1a5f666.png)
+  
+  
+### 8.2. Overlay - Modificando o App Settings
+```bash
+# Acesse o arquivo mencionado, copie e salve a tag de nome build_number.
 
+    <string name="build_number">Build number</string>
+    
 ```
 
 ```bash
+# Para fazer essa alteração, crie o arquivo de overlay com o conteúdo abaixo:
 
+cd device/palomakoba/onion/
+mkdir -p overlay/packages/apps/Settings/res/values/
 ```
+![image](https://user-images.githubusercontent.com/19675356/227397525-83096a58-5312-4156-ba27-f6e2b86626ab.png)
+![image](https://user-images.githubusercontent.com/19675356/227397653-fa4733e8-54a5-4763-ad4e-b6631a146e9e.png)
+![image](https://user-images.githubusercontent.com/19675356/227399359-13043f6a-7b0a-4cbd-82a5-6cb5963c105d.png)
 
 ```bash
-
+# Tire um screenshot do Android mostrando o Settings.
 ```
-
+![image](https://user-images.githubusercontent.com/19675356/227399645-d8764cb2-4202-4d0a-8a73-6ebcfd217fbc.png)
+  
+  
+### 8.3. Overlay - Modificando o Wallpaper Padrão
 ```bash
+# Vamos substituí-lo usando o overlay. Para isso, execute:
+# Feche o emulador, compile o AOSP, inicie o emulador novamente. Note o novo wallpaper. 
+# Tire um screenshot do Android mostrando o novo wallpaper.
 
 ```
-
-```bash
-
-```
-
+![image](https://user-images.githubusercontent.com/19675356/227403065-5b5fb13d-324c-48d9-9aac-300e00e7f4f2.png)
+![image](https://user-images.githubusercontent.com/19675356/227403161-e4ec5818-0544-4789-8b54-77c3d391e3c8.png)
+  
+  
+### 8.4. Modificando a Animação de Boot
 ```bash
 
 ```
