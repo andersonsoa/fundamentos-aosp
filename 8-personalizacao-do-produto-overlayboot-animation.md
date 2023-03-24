@@ -57,27 +57,51 @@ gedit overlay/frameworks/base/core/res/res/values/config.xml
 
 m -j10
 emulator &
+
+# Volte para o Settings → Display, no final da tela, e note que não existe mais a opção "Auto-rotate screen". 
+# Clique no botão abaixo e tirae um screenshot do Display Settings
+```
+![image](https://user-images.githubusercontent.com/19675356/227391765-697f122a-1799-49b5-8f4a-d4ee818b1b7a.png)
+
+```bash
+# Observando o arquivo original config.xml, copie e salve o comentário que descreve a configuração de nome config_longPressOnPowerBehavior.
+
+#         Control the behavior when the user long presses the power button.
+#           0 - Nothing
+#           1 - Global actions menu
+#           2 - Power off (with confirmation)
+#           3 - Power off (without confirmation)
+#           4 - Go to voice assist
+#           5 - Go to assistant (Settings.Secure.ASSISTANT)
 ```
 
 ```bash
+# Modifique o arquivo de overlay já aberto anteriormente e inclua, após a linha do config_supportAutoRotation, o código abaixo:
 
+<!-- O que acontece ao se pressionar o botão power por um tempo longo -->
+<integer name="config_longPressOnPowerBehavior">2</integer>
 ```
+![image](https://user-images.githubusercontent.com/19675356/227392639-6d9199d7-8ed2-4f4c-ad70-0fed90f88c03.png)
+![image](https://user-images.githubusercontent.com/19675356/227393460-3797ba6f-d579-4bd9-bce1-f551906987a4.png)
 
 ```bash
-
+# Tirar um screenshot do Android mostrando a caixa de diálogo de confirmação.
 ```
+![image](https://user-images.githubusercontent.com/19675356/227393616-14343121-15fc-4049-9ea1-ad4e24bd135b.png)
 
 ```bash
+# Acesse o arquivo original config.xml, copie e salve o comentário que descreve a 
+# configuração de nome config_dialogCornerRadius.
 
+#   <!-- Corner radius of system dialogs -->
 ```
+![image](https://user-images.githubusercontent.com/19675356/227393924-faec4d89-a6d9-4ac8-abb3-6026226b5f5a.png)
 
 ```bash
-
+# Modifique seu valor como no código abaixo:
+<dimen name="config_dialogCornerRadius">50dp</dimen>
 ```
-
-```bash
-
-```
+![image](https://user-images.githubusercontent.com/19675356/227394055-dde7fa2c-435d-4f6a-bf50-fdf3dd4fbc99.png)
 
 ```bash
 
