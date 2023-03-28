@@ -147,23 +147,39 @@ mkdir -p overlay/packages/apps/Settings/res/values/
   
 ### 8.4. Modificando a Animação de Boot
 ```bash
-
+# Liste abaixo os arquivos procurados, na ordem.
 ```
+![image](https://user-images.githubusercontent.com/19675356/228384491-a4234148-b5a8-44ca-a98d-a04e910491c4.png)
 
 ```bash
-
+# Copiando arquivo de animation
 ```
+![image](https://user-images.githubusercontent.com/19675356/228385096-cb986828-29d4-4bac-aaa0-d5de7e4a33dd.png)
 
 ```bash
-
+# Adicionando comando para copiar o bootanimation durante o build
 ```
+![image](https://user-images.githubusercontent.com/19675356/228385447-65d9585b-97be-492a-a5f1-e8d8e5214197.png)
 
 ```bash
-
+# Por fim, feche o seu emulador e compile o novo Android. Inicie o emulador. 
+# Imediatamente, clique no botão abaixo para preparar o screenshot. 
 ```
+![image](https://user-images.githubusercontent.com/19675356/228386719-f8aa165a-d872-4a1f-b5d1-40074e971517.png)
+![image](https://user-images.githubusercontent.com/19675356/228386872-0101d66e-2b14-421b-9a7c-9741915a0674.png)
+  
+  
+### 8.6. Desafio II - Wallpaper
 
-```bash
+```text
+ - Em uma seção anterior, alteramos o wallpaper padrão substituindo o arquivo default_wallpaper.png usando overlay.
+Entretanto, se você for no início da classe WallpaperManager, você verá que existe uma propriedade de sistema 
+que permite mudar também esse wallpaper e que possui, inclusive, prioridade sobre o arquivo padrão.
 
+ - Sua missão é alterar novamente o wallpaper do Android para ser o arquivo disponível em ~/default_wallpaper2.png 
+ ou algum outro de sua escolha. Mas, desta vez, você deve fazer isso usando as propriedades do sistema, ao invés 
+ de overlays. Após obter sucesso em sua missão, envie o código relevante do seu palomakoba_zues.mk na tarefa 
+ especificada no módulo da disciplina.
 ```
 
 ```bash
