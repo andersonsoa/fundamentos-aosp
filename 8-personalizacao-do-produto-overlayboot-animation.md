@@ -181,15 +181,11 @@ que permite mudar também esse wallpaper e que possui, inclusive, prioridade sob
  de overlays. Após obter sucesso em sua missão, envie o código relevante do seu palomakoba_zues.mk na tarefa 
  especificada no módulo da disciplina.
 ```
+![image](https://user-images.githubusercontent.com/19675356/228397586-0af8c394-d454-4141-a0f2-8e07e2d9d49f.png)
 
-```bash
+  
+  
+### Sumário
 
-```
-
-```bash
-
-```
-
-```bash
-
-```
+> Neste laboratório aprendemos algumas formas de personalizar nosso produto atravez do arquivo de .mk dele.
+> personalizamos com utilizando o metodo overlay, substituição direta de arquivos e setando propriedades de sistema.
