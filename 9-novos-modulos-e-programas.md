@@ -299,6 +299,9 @@ m
 emulator &
 adb shell
 ```
+![image](https://user-images.githubusercontent.com/19675356/228703444-894609e3-a711-4cc0-b786-90792d4ca096.png)
+![image](https://user-images.githubusercontent.com/19675356/228703628-fbb1d82f-51e8-4082-81a0-e61a39f9025b.png)
+![image](https://user-images.githubusercontent.com/19675356/228703731-32a51e89-d344-4ff1-a3d9-2c867b946705.png)
 
 ### Sumario
 
