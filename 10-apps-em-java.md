@@ -114,3 +114,6 @@ Entre no adb shell e execute o comando abaixo para ver aonde ele está armazenad
   As Strings utilizadas no App devem ser especificadas no arquivo Strings.xml;   
   As cores utilizadas para construção do tema do App devem ser especificadas no arquivos colors.xml  
   Especifique um tema para sua aplicação. Faça isso por meio do arquivo themes.xml  
+  
+  ![image](https://user-images.githubusercontent.com/19675356/229002020-189d7e1b-e553-4b07-8a36-03b5f45ab93e.png)
+
