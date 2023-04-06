@@ -62,8 +62,10 @@ Botanimation criado pelo grupo.
 
 Atravez so overlay alteramos o tema padrão do produto para 'Escuro' e setamos o build number do produto  
 - alteração feita no arquivo `overlay/frameworks/base/core/res/res/values/config.xml`
+![image](https://user-images.githubusercontent.com/19675356/230247160-5afc1f9d-ef45-4b43-b4c6-878a28a0b720.png)
 ![image](https://user-images.githubusercontent.com/19675356/230242467-1bfe6fdb-7f33-47ec-9af6-46f1bc227efe.png)
 - alteração feita no arquivo `overlay/packages/apps/Settings/res/values/strings.xml`
+![image](https://user-images.githubusercontent.com/19675356/230247255-df204d8b-3e9f-46c8-85a8-d4ad75a9abf7.png)
 ![image](https://user-images.githubusercontent.com/19675356/230242702-3393c88f-8f9f-4fd2-af7c-208ace811aa8.png)
 
 Estes são alguns dos apps adicionados ao produto durante o build  
